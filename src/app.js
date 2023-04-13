@@ -8,6 +8,7 @@ const forecast = require("./utils/forecast.js");
 // console.log(path.join(__dirname,'../public/index.html'));
 
 const app = express();
+const port = process.env.PORT || 3000; // env variable for feroku port
 
 // Define paths for Express config
 const publicDirPath = path.join(__dirname, "../public");
@@ -101,6 +102,6 @@ app.get("*", (req, res) => {
 });
 
 //initialize app
-app.listen(3000, () => {
-  console.log("Listening on Port 3000!");
+app.listen(port, () => {
+  console.log("Listening on Port " + port);
 });
